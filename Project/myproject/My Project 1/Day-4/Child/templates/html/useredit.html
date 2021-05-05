@@ -1,0 +1,19 @@
+{% extends 'html/header.html' %}
+{% block title %}User Edit{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<form method="POST" info.id>
+				{% csrf_token %}
+				<input type="text" class="form-control" name="username" value="{{info.username}}" placeholder="Enter UserName">
+				<input type="text" class="form-control" name="email" value="{{info.email}}" placeholder="Enter Email ID">
+				<input type="password" class="form-control" name="password" value="{{info.password}}" placeholder="Enter ur password securely..."><br>
+				<input type="submit" value="Submit" class="bg-success">
+			</form>
+		</div>	
+	</div>
+</div>
+
+{% endblock %}

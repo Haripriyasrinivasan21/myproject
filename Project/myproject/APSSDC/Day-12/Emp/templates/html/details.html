@@ -1,0 +1,21 @@
+{% extends 'html/header.html' %}
+{% block title %}Details{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row mt-5 mx-2">
+		<div class="card col-md-4">
+			<h4 class="text-danger text-center">Profile Image</h4>
+			<div class="card-body"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXwjM9wD3eMu0TvYMhxrenoZVQ7wru1VSBw&usqp=CAU"></div>
+		</div>
+		<div class="card col-md-4">
+			<h4 class="text-danger text-center"> User Details</h4>
+	           
+				<h4><label class="text-info">First Name: {{d.fn}}</label>
+				<label class="text-info">Last Name: {{d.ln}}</label>
+				<label class="text-info">Age: {{d.age}}</label>
+				<label class="text-info">Email ID: {{d.em}}</label>
+				<label class="text-info">Password: {{d.pas}}</label></h4>
+		</div>
+	</div>
+</div>
+{% endblock %}

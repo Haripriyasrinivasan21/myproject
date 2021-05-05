@@ -1,0 +1,29 @@
+{% extends 'html/base.html' %}
+{% block title %}Service Request{% endblock %}
+{% block content %}
+ 
+<div class="container">
+	<div class="card col-md-6 mx-auto mt-4 shadow-lg">
+		<h3 class="bg-info text-center text-white mt-3 my-2 p-2 border rounded">Service Request</h3>
+		<div class="card-body">
+			<form method="POST">
+				{% csrf_token %}
+				<table class="table table-borderless">
+					{% for k in ser %}
+					<tr>
+						<td>
+							{{k}}
+						</td>
+					</tr>
+					{% endfor %}
+				</table>
+				<div class="row">
+						<div class="col">
+							<input type="Submit" class="form-control btn btn-info col-sm" name="subscribe" value="Approve My Request">
+						</div>
+					</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

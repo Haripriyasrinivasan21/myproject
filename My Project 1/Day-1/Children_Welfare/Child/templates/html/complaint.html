@@ -1,0 +1,16 @@
+{% extends 'html/base.html' %}
+{% block title %}Complaint{% endblock %}
+{% block content %}
+   <div class="container">
+   	<div class="card col-md-6 mx-auto mt-5 shadow-lg">
+   		<h2 class="bg-info text-center mt-3 text-white form-control">Let us know your Complaints Here....</h2>
+   		<div class="card-body">
+   	<form method="POST">
+   		{% csrf_token %}
+   		{{c.as_p}}
+   		<input type="submit" value="Post ur Complaint" class="bg-success form-control">
+   	</form>
+   </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'html/base.html' %}
+{% block title %}Reset Confirm{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="card mt-4 mx-auto col-md-5">
+		<h3 class="text-center text-light p-2 bg-info mt-2">Reset_password_confirmation</h3>
+		<div class="card-body">
+			<form method="POST">
+				{% csrf_token %}
+				<input type="password" name="new_password1" class="form-control my-2"placeholder="Enter New Password">
+				<input type="password" name="new_password2" class="form-control my-4"placeholder="Confirm New Password">
+				<input type="submit" value="Submit Your New Password" class="btn btn-block btn-success form-control text-light">
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

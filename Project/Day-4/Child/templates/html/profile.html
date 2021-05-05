@@ -1,0 +1,61 @@
+{% extends 'html/base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="card col-md-5 mt-4 shadow-lg mx-1">
+	      <h3 class="p-2 bg-info text-center text-light border rounded my-2">Info</h3>
+	      <img src="{{user.impf.url}}"> <!--height="300px" width="500px"-->
+	         <div class="card-body">
+		       <h4>Hi {{user.username}}</h4>
+		       <div class="row">
+		       <div class="col ">
+	         		<a href="{% url 'at' %}" class="btn btn-danger text-light form-control">Back</a>
+	         	</div>
+	         	<div class="col ">
+	         		<a href="{% url 'upf' %}" class="btn btn-danger text-light form-control">Update</a>
+	         	</div>
+	         </div>
+	        </div>
+        </div>
+	    <div class="col-md mt-4 card shadow-lg mx-1">
+		  <h3 class="p-2 bg-info text-light text-center border rounded my-2">User Details</h3>
+		  <table class="table table-borderless">
+		  	<tr>
+		  		<th>Username :</th>
+		  		<td>{{user.username}}</td>
+		  	</tr>
+		  	<tr>
+		  		<th>Email_ID :</th>
+		  		<td>{{user.email}}</td>
+		  	</tr>
+		  	<tr>
+		  		<th>Dob :</th>
+		  		<td>{{user.Dob}}</td>
+		  	</tr>
+		  	<tr>
+		  		<th>Mobile Number :</th>
+		  		<td>{{user.Mobile_Number}}</td>
+		  	</tr>
+		  	<tr>
+		  		<th>Address :</th>
+		  		<td>{{user.Address}}</td>
+		  	</tr>
+		  	<tr>
+		  		<th>Country :</th>
+		  		<td>{{user.Country}}</td>
+		  	</tr>
+		  	<tr>
+		  		<th>Postal Code :</th>
+		  		<td>{{user.Postal_code}}</td>
+		  	</tr>
+		  	<tr>
+		  		<th>City :</th>
+		  		<td>{{user.City}}</td>
+		  	</tr>
+		  </table>
+       
+		</div>
+	</div>
+</div>
+{% endblock %}

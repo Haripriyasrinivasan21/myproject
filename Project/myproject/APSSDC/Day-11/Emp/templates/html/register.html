@@ -1,0 +1,19 @@
+{% extends 'html/header.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<body class="bg-info"></body>
+<div class="container">
+	<div class="card col-md-4 mx-auto mt-5 shadow-lg">
+		<div class="card-body">
+			<h3 class="bg-danger text-light p-3 text-center border rounded">Registration From</h3>
+			<h6 class="bg-muted">Create Your account Now...It's free and only takes a minute...!!</h6>
+			<form method="post">{% csrf_token %}<input type="text" name="uname" placeholder="UserName"class="form-control">
+		    <input type="number" name="ag" placeholder="Age" class="form-control my-2">
+			<input type="email" name="eml" placeholder="Email ID" class="form-control my-2">
+			<input type="password" name="pd" placeholder="Password" class="form-control my-2">
+			<input type="Submit" class="btn btn-success btn-block" value="Register Now...">
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

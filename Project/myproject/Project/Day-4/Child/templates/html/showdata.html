@@ -1,0 +1,43 @@
+{% extends 'html/base.html' %}
+{% block title %}Showing Data{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row mt-3">
+  	<div class="card-md-7 mt-5 mx-auto">
+    <table class="table table-striped table-hover table-borderless">
+  			<tr class="text-light bg-info">
+  				<th>S.No</th>
+  				<th>User Name</th>
+  				<th>Email ID</th>
+          <th>Mobile Number</th>
+          <th>Donating Way</th>
+          <th>Sponsor Way</th>
+          <th>Date of Donation</th>
+          <td>Pan</td>
+          <td>Amount Paid</td>
+          <td>Payment Mode</td>
+  				<th>Operations</th>
+  			</tr>
+  			{% for i in info1 %}
+  			<tr>
+  				<td>{{ forloop.counter}}</td>
+  				<td><a href="{% url 'uif' i.User_Name %}">{{i.User_Name}}</a></td>
+  				<td>{{i.Email_ID}}</td>
+          <td>{{i.Mobile_Number}}</td>
+          <td>{{i.Ways_To_Donate}}</td>
+          <td>{{i.Sponsor_Way}}</td>
+          <td>{{i.Donating_Date}}</td>
+          <td>{{i.Pan}}</td>
+          <td>{{i.Amount}}</td>
+          <td>{{i.Payment_Mode}}</td>
+  				<td><a href="{% url 'ue' i.id %}" class="btn btn-success">Edit</a>
+                <a href="{% url 'infodelete' i.id %}" class="btn btn-danger">Delete</a></td>
+  			</tr>
+  			{% endfor %}
+  		</table>
+  		</div>
+  		</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'html/base.html' %}
+{% block title %} User Info {% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row mt-5 mx-auto">
+		<div class="card col-md mx-2">
+			<h3 class="bg-success p-2 border rounded text-center text-light mt-3">User Basic Details</h3>
+			<table class="table table-borderless">
+				<tr>
+					<th>UserName</th>
+					<td>{{y.username}}</td>
+				</tr>
+				<tr>
+					<th>EmailID</th>
+					<td>{{y.Email_ID}}</td>
+				</tr>
+			</table>
+			<a href="{% url 'show' %}" class="btn btn-info btn-block my-2">Get Back</a>
+		</div>
+		<div class="card col-md mx-2">
+			<h3 class="text-center border rounded mt-3 p-2 text-light bg-success">Full Details</h3>
+			<table class="table table-borderless">
+				<tr>
+					<th>Mobile number</th>
+					<td>{{yu.Mobile_Number}}</td>
+				</tr>
+				<tr>
+					<th>PAN</th>
+					<td>{{yu.Pan}}</td>
+				</tr>
+			</table><br><br>
+			<a href="{% url 'show' %}" class="btn btn-info btn-block my-2">Get Back</a>
+		</div>
+	</div>
+</div>
+{% endblock %}

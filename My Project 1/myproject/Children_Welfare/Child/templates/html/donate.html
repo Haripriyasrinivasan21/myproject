@@ -1,0 +1,24 @@
+{% extends 'html/base.html' %}
+{% block title %}Donate{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="card col-md-8 mx-auto mt-5 shadow-lg">
+		<div class="card-body">
+			<h5 class="bg-info text-light p-2 text-center border rounded">Ways to give...!!</h5>
+            <div class="row">
+				<div class="col">
+				<a href="#"class="form-control btn btn-info my-2 col-sm"><h6>One time donation</h6></a>
+				</div>
+				<div class="col">
+				<a href="#"class="form-control btn btn-info my-2 col-sm"><h6>Once in a year</h6></a>
+				</div>
+				<div class="col">
+				<a href="#"class="form-control btn btn-info my-2 col-sm"><h6>Once in a month</h6></a>
+				<div class="col">
+				<a href="{% url 'occasion' %}"class="form-control btn btn-info my-2 "><h6>On any Occasion</h6></a>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+{% endblock %}

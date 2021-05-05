@@ -1,0 +1,31 @@
+{% extends 'html/header.html' %}
+{% block title %}Showing Data{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row mt-3">
+  	<div class="card-md-7 mt-5 mx-auto">
+    <table class="table table-striped table-hover table-borderless">
+  			<tr class="text-light bg-info">
+  				<th>S.No</th>
+  				<th>Username</th>
+  				<th>Email</th>
+  				<th>Age</th>
+  				<th>Operations</th>
+  			</tr>
+  			{% for i in info1 %}
+  			<tr>
+  				<td>{{ forloop.counter}}</td>
+  				<td>{{i.username}}</td>
+  				<td>{{i.email}}</td>
+  				<td>{{i.age}}</td>
+  				<td><a href="{% url 'ue' i.id %}" class="btn btn-info">Edit</a>
+                <a href="{% url 'infodelete' i.id %}" class="btn btn-danger">Delete</a></td>
+  			</tr>
+  			{% endfor %}
+  		</table>
+  		</div>
+  		</div>
+</div>
+
+
+{% endblock %}

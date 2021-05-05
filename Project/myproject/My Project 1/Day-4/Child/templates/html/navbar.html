@@ -1,0 +1,118 @@
+{% load static %}
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="{% url 'hm' %}">
+    <img src="{% static 'images/icon.jpg' %}" alt="logo" style="width:40px;">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    {% if not user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'hm' %}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'at' %}">AboutUs</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'ct' %}">ContactUs</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav ml-auto" style="margin-right:120px">
+   <!--  <li class="nav-item">
+      <a class="nav-link" href="{% url 'donate' %}"><i class='fas fa-hand-holding-heart'></i> Donate</a>
+    </li> -->
+    <li class="nav-item"> 
+      <a class="nav-link" href="{% url 'log' %}"><i class='fas fa-address-card'></i> Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'nu' %}"><i class='fas fa-address-card'></i> Sign Up</a>
+    </li>
+    {% elif user.role == 1 %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'dd' %}">Add Donor Details</a>
+      </li>
+      <li class="nav-item ">
+      <a class="nav-link " href="{% url 'show' %}">Show Data</a>
+    </li>
+    </ul>
+      <ul class="navbar-nav ml-auto" style="margin-right:120px">
+      <li class="dropdown">
+    <a type="button" class="nav-link dropdown-toggle" data-toggle="dropdown">
+      <i class='fas fa-address-card'></i> {{user.username}} 
+    </a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{% url 'cg' %}">Change Password</a>
+      <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+    </div>
+  </li>
+  <li class="nav-item">
+      <a class="nav-link" href="{% url 'fb' %}"><i class='far fa-grin-stars'></i> Feedback</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'cp' %}"><i class='far fa-meh'></i> Complaint</a>
+    </li>
+    
+  <li class="nav-item">
+        <a class="nav-link" href="{% url 'logo' %}">Logout</a>
+      </li>
+      {% elif user.role == 2 %}
+      <li class="nav-item">
+        <a class="nav-link" href="#">Org</a>
+      </li>
+    <li class="nav-item ">
+      <a class="nav-link " href="{% url 'show' %}">Show Data</a>
+    </li>
+  </ul>
+      <ul class="navbar-nav ml-auto" style="margin-right:120px">
+      <li class="dropdown">
+    <a type="button" class="nav-link dropdown-toggle" data-toggle="dropdown">
+      <i class='fas fa-address-card'></i> {{user.username}} 
+    </a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{% url 'cg' %}">Change Password</a>
+      <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+    </div>
+  </li>
+  <li class="nav-item">
+        <a class="nav-link" href="{% url 'logo' %}">Logout</a>
+      </li>
+</ul>
+    {% else %}
+    <li class="nav-item">
+        <a class="nav-link" href="#">Guest</a>
+      </li>
+  </ul>
+    <ul class="navbar-nav ml-auto" style="margin-right:120px">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'donate' %}"><i class='fas fa-hand-holding-heart'></i> Donate</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'ju' %}"><i class='fas fa-handshake'></i> Join Us</a>
+    </li>
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="{% url 'fb' %}"><i class='far fa-grin-stars'></i> Feedback</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'cp' %}"><i class='far fa-meh'></i> Complaint</a>
+    </li>
+     --><li class="dropdown">
+    <a type="button" class="nav-link dropdown-toggle" data-toggle="dropdown">
+      <i class='fas fa-address-card'></i> {{user.username}} 
+    </a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{% url 'cg' %}">Change Password</a>
+      <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+      <a class="dropdown-item" href="{% url 'logo' %}">Logout</a>
+    </div>
+  </li>
+{% endif %}
+</ul>
+</div>
+</nav>

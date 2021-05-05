@@ -1,0 +1,16 @@
+{% extends 'html/base.html' %}
+{% block title %}Onetimedon Details{% endblock %}
+{% block content %}
+   <div class="container">
+   	<div class="card col-md-6 mx-auto mt-5 shadow-lg">
+   		<h2 class="bg-info text-center mt-3 text-white p-4 form-control">Donor Information</h2>
+   		<div class="card-body">
+   	<form method="Post">
+   		{{details.as_p}}
+         {% csrf_token %}
+   		<input type="submit" value="Pay" class="bg-info text-white form-control">
+   	</form>
+   </div>
+</div>
+</div>
+{% endblock %}
